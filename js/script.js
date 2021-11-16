@@ -13,10 +13,10 @@
 // Math.pow() — https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Math/pow
 // Оператор ** пример (2 ** 8) — возводим число 2 в 8-ю степень
 function powNumber(num, pow = 1) {
-    if (num === null || num.trim() === `` || isNaN(+num)) return alert(`some error`);
-    if (pow === null || pow.trim() === `` || isNaN(+pow)) return alert(`some error`);
-    return alert (Math.pow(+num, +pow));
+    if (typeof(num) !== `number` || isNaN(num)) return alert(`some error`);
+    if (typeof(pow) !== `number` || isNaN(pow)) return alert(`some error`);
+    return Math.pow(num, pow);
 }
-powNumber(prompt('Введите число:'), prompt('Введите число:'));
+alert(powNumber(+prompt('Введите число:'), +prompt('Введите число:')));
 
 
